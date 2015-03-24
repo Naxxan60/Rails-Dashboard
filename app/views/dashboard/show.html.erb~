@@ -1,0 +1,26 @@
+<h1>Dashboard#show</h1>
+
+<label>(Re)Load GithubArchive data : </label><a href="archives/new">ici</a>
+</br>
+</br>
+
+<h2>Nombre d'event</h2>
+<% @DictNbEvent.each do |key, value| %>
+	<p>--<%= key %> : <%= value %></p>
+<% end %>
+</br>
+</br>
+<h2>Best Acteur pour les WatchEvent</h2>
+
+	<p>>><%= @maxName %> : <%= @max %><<</p>
+</br>
+</br>
+<h2>Nombres de WatchEvent par acteur</h2>
+<% @DictActor.each do |key, value| %>
+	<p>++<%= key %> : <%= value %></p>
+<% end %>
+</br>
+</br>
+
+
+<p>Find me in app/views/dashboard/show.html.erb</p>

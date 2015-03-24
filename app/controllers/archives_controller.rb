@@ -1,0 +1,27 @@
+class ArchivesController < ActionController::Base
+
+def new
+
+	require 'open-uri'
+	require 'zlib'
+	require 'yajl'
+	require 'mongo'
+	 
+	gz = open('http://data.githubarchive.org/2015-01-01-12.json.gz')
+	js = Zlib::GzipReader.new(gz).read
+	
+	#mongo_client = MongoClient.new("localhost", 27017) 
+	mongo_client = Mongo::Connection.new("ds039301.mongolab.com", 39301)
+	db = mongo_client.db("ruby_dashboard")
+	auth = db.authenticate("user", "password")
+	coll = db.collection("archives")
+
+	Yajl::Parser.parse(js) do |event|
+	  
+		#print event["actor"]["login"]
+
+		coll.insert(event)
+	end
+end
+
+end
