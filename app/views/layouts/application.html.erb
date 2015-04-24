@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>RailsDashboard</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Dashboard Github Archive</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="">
+        <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/paper/bootstrap.min.css', 'styles.css' %>
+        <%= csrf_meta_tags %>
+	</head>
+	<body>
 
 <%= yield %>
 
-</body>
+<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', 'scripts.js'%>
+    </body>
 </html>
